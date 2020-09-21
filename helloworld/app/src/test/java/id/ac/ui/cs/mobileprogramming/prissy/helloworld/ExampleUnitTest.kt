@@ -1,4 +1,4 @@
-package com.tktpl.helloworld
+package id.ac.ui.cs.mobileprogramming.prissy.helloworld
 
 import org.junit.Test
 

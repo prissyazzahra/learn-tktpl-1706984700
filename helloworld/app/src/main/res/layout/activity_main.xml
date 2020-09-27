@@ -15,8 +15,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Enter your name..."
-        android:layout_above="@+id/greetme"
-        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
         />
 
     <Button
@@ -24,7 +23,10 @@
         android:layout_width="296dp"
         android:layout_height="wrap_content"
         android:text="Greet me!"
-        android:layout_centerInParent="true"/>
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/choose_greeting"
+        android:layout_centerHorizontal="true"
+        />
 
     <TextView
         android:id="@+id/greetName"
@@ -36,6 +38,30 @@
         android:layout_centerHorizontal="true"
         android:layout_above="@+id/name_input"
         />
+
+    <RadioGroup
+        android:id="@+id/choose_greeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_below="@+id/name_input">
+        <RadioButton
+            android:id="@+id/basic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/basic_greeting"/>
+        <RadioButton
+            android:id="@+id/fancy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fancy_greeting" />
+        <RadioButton
+            android:id="@+id/dandy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dandy_greeting" />
+    </RadioGroup>
 
 
 </RelativeLayout>

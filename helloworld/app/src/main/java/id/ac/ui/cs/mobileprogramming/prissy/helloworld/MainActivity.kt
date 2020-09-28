@@ -13,7 +13,12 @@ class MainActivity : AppCompatActivity() {
 
         greetme.setOnClickListener() {
             changeGreeting(greetType, name_input.text.toString())
-            greetName.text = changeGreeting(greetType, name_input.text.toString())
+
+            if (name_input.text.toString() == "") {
+                greetName.text = "Tell me your name, please :("
+            } else {
+                greetName.text = changeGreeting(greetType, name_input.text.toString())
+            }
 
         }
 

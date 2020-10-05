@@ -57,7 +57,7 @@ class StopwatchActivity:Activity() {
                 val hours = (seconds / 3600)
                 val minutes = (seconds % 3600) / 60
                 val secs = seconds % 60
-                timeView.text = "$hours:$minutes:$secs"
+                timeView.text = "%d:%02d:%02d".format(hours, minutes, secs)
 
                 if (running) {
                     seconds++

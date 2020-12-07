@@ -3,10 +3,16 @@ package id.ac.ui.cs.mobileprogramming.prissy.helloworld
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.RadioButton
+import id.ac.ui.cs.mobileprogramming.prissy.helloworld.external.Sum
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.sum_numbers.*
+import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
     private var greetType : String = ""
+    private val sumClass = Sum()
+    private var results = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -36,6 +42,17 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
+        sumANumber.setOnClickListener {
+            setContentView(R.layout.sum_numbers)
+
+            sumButton.setOnClickListener {
+                val first: Int = firstNum.text.toString().toInt()
+                val second: Int = secondNum.text.toString().toInt()
+                results = sumClass.addSum(first, second)
+                result.text = results.toString()
+            }
+        }
     }
 
     fun changeGreeting(type : String, name : String): String {
@@ -51,4 +68,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+
 }

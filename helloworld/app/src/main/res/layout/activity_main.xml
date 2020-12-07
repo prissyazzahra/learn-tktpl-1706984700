@@ -63,5 +63,15 @@
             android:text="@string/dandy_greeting" />
     </RadioGroup>
 
+    <Button
+        android:id="@+id/sumANumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sum a number!"
+        android:layout_below="@id/greetme"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        />
+
 
 </RelativeLayout>

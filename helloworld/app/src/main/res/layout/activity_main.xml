@@ -1,18 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
+
+    android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/name_input"
+        android:layout_width="295dp"
+        android:layout_height="47dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Enter your name..."
+        android:layout_centerInParent="true"
+        />
+
+    <Button
+        android:id="@+id/greetme"
+        android:layout_width="296dp"
+        android:layout_height="wrap_content"
+        android:text="Greet me!"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/choose_greeting"
+        android:layout_centerHorizontal="true"
+        />
 
     <TextView
+        android:id="@+id/greetName"
+        android:layout_width="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content"
+        android:text="Hello, there!"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/name_input"
+        />
+
+    <RadioGroup
+        android:id="@+id/choose_greeting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_below="@+id/name_input">
+        <RadioButton
+            android:id="@+id/basic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/basic_greeting"/>
+        <RadioButton
+            android:id="@+id/fancy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fancy_greeting" />
+        <RadioButton
+            android:id="@+id/dandy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dandy_greeting" />
+    </RadioGroup>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/sumANumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sum a number!"
+        android:layout_below="@id/greetme"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        />
+
+
+</RelativeLayout>
